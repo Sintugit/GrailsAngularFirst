@@ -4,4 +4,5 @@ class AngularTemplatesController {
 
     def firstPage() { }
     def secondPage() { }
+    def broadcastPage() { }
 }

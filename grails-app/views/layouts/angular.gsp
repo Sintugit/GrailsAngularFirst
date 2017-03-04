@@ -47,11 +47,13 @@
 <script src="${resource(dir:'js/angular/filters',file:'custom.js')}"></script>
 <!--Services-->
 <script src="${resource(dir:'js/angular/services',file:'sampleService.js')}"></script>
+<script src="${resource(dir:'js/angular/services',file:'broadcastService.js')}"></script>
 <!--Controllers-->
 
 <script src="${resource(dir:'js/angular/controllers',file:'main.js')}"></script>
 <script src="${resource(dir:'js/angular/controllers',file:'firstController.js')}"></script>
 <script src="${resource(dir:'js/angular/controllers',file:'secondController.js')}"></script>
+<script src="${resource(dir:'js/angular/controllers',file:'broadcastController.js')}"></script>
 <script src='${resource(dir:'js/angular/resources',file:'application.js')}'></script>
 
 </body>
