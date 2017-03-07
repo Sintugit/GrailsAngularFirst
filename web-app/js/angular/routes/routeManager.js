@@ -18,10 +18,10 @@ app42Angular.config(['$routeProvider','$httpProvider',
         })
 
         .when('/broadcast', {
-            templateUrl: 'angularTemplates/broadcastPage',
+            templateUrl: 'angularTemplates/broadcast',
             controller: 'broadcastController'
         })
-       
+
         .otherwise({
             redirectTo: '/first-page'
         });

@@ -23,4 +23,30 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
     }
     $scope.getData()
 
+    $scope.removeRow = function($index){
+        $scope.data.splice($index, 1 );
+    }
+
+    $scope.changeStatus = function(x){
+        if(x.status =='Running'){
+            x.status = 'Suspended';
+        }
+        else{
+            x.status = 'Running';
+        }
+
+    }
+
+    $scope.copyRow = function(x){
+        $scope.data.push({'id': x.id,'name': x.name,'status': x.status});
+    }
+
+    $scope.updateName = function(x){
+        x.name = newName;
+    }
+
+    $scope.removeTag = function($index,tags){
+        tags.splice($index,1);
+    }
+
 });

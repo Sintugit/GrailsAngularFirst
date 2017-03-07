@@ -7,27 +7,57 @@
     <h3>Email Notification</h3>
   </div>
   <div class="widget-content email-content">
-    <div class="row">
-        <a href="">
-        <div class="col-sm-3">
-          <img src="${request.getContextPath()}/images/option1.png" class="img-responsive margin" style="width:100%" alt="Image">
-          <p>Template</p>
-
-        </div>
-        </a>
-        <div class="col-sm-3">
-          <img src="${request.getContextPath()}/images/option2.png" class="img-responsive margin" style="width:100%" alt="Image">
-          <p>Reset Password Template</p>
-        </div>
-        <div class="col-sm-3">
-          <img src="${request.getContextPath()}/images/option3.png" class="img-responsive margin" style="width:100%" alt="Image">
-          <p>Broadcast</p>
-        </div>
-        <div class="col-sm-3">
-          <img src="${request.getContextPath()}/images/option4.png" class="img-responsive margin" style="width:100%" alt="Image">
-          <p>Logs</p>
-        </div>
-      </div>
-
+    <div class="container">
+    	<div class="row email-notification">
+    		<div class="col-md-3 col-xs-6 items">
+    			<div class="thumbnail">
+    				<div class="icon-section">
+    					<img src="images/add.png">
+    				</div>
+    				<div class="link-section">
+    					<a href="#">
+    						Template
+    					</a>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-3 col-xs-6 items">
+    			<div class="thumbnail">
+    				<div class="icon-section">
+    					<img src="images/reset.png">
+    				</div>
+    				<div class="link-section">
+    					<a href="#">
+    						Reset Password Template
+    					</a>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-3 col-xs-6 items">
+    			<div class="thumbnail">
+    				<div class="icon-section">
+    					<img src="images/broadcast.png">
+    				</div>
+    				<div class="link-section">
+    					<a href="${request.getContextPath()}/#/broadcast">
+    						broadcast
+    					</a>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-3 col-xs-6 items">
+    			<div class="thumbnail">
+    				<div class="icon-section">
+    					<img src="images/logs.png">
+    				</div>
+    				<div class="link-section">
+    					<a href="#">
+    						logs
+    					</a>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
   </div>
 </div>
