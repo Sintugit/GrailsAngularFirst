@@ -4,13 +4,18 @@
     <title><g:layoutTitle default="App42" /></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <link rel="stylesheet" media="all" type="text/css" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     <link rel='stylesheet' href='${resource(dir:'css',file:'custom_style.css')}'>
     <link rel='stylesheet' href='${resource(dir:'css',file:'custom_styleV2.css')}'>
-  
+    <link rel='stylesheet' href='${resource(dir:'css',file:'custom_styleV2.css')}'>
+                       '
     <link rel='stylesheet' href='${resource(dir:'css',file:'app.css')}'>
 
+
+  <link rel='stylesheet' href='${resource(dir:'css',file:'datepicker.css')}'>
 
   
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.css'>
@@ -32,7 +37,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
-<script src="${resource(dir:'js/angular',file:'datepicker.js')}"></script>
+<script src="${resource(dir:'js/angular',file:'bootstrap.min.js')}"></script>
+<script src="${resource(dir:'js/angular',file:'moment.js')}"></script>
+<script src="${resource(dir:'js/angular',file:'bootstrap-datepicker.js')}"></script>
+
 
 <!--angular js scripts-->
 <script src="${resource(dir:'js/angular',file:'CONSTANTS.js')}"></script>
