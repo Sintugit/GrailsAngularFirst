@@ -23,20 +23,28 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
     }
     $scope.getData()
 
-    $scope.removeRow = function($index){
-        $scope.data.splice($index, 1 );
+    $scope.removeRow = function($index, id){
+        var promise = broadcastService.delete(id)
+        promise.then(
+            function(payload) {
+                if(payload.data.status == 'success') {
+                    $scope.data.splice($index, 1);
+                }
+            })
+
     }
 
     $scope.changeStatus = function(x){
         var promise = broadcastService.setStatus(x)
         promise.then(
             function(payload) {
-
-                if(payload.data.status =='Running'){
-                    x.status = 'Suspended';
-                }
-                else{
-                    x.status = 'Running';
+                if(payload.data.status == 'success') {
+                    if (x.status == 'Running') {
+                        x.status = 'Suspended';
+                    }
+                    else {
+                        x.status = 'Running';
+                    }
                 }
             })
     }
