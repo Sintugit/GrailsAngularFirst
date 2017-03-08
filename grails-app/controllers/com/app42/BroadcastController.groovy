@@ -41,6 +41,12 @@ class BroadcastController {
     def delete(){
         def arr = request.JSON
         def status = [status:'success']
-        render arr as JSON
+        render status as JSON
+    }
+
+    def copy(){
+        def arr = request.JSON
+        def status = [status:'success']
+        render status as JSON
     }
 }

@@ -26,12 +26,24 @@ app42Angular.factory('broadcastService', function($rootScope,$http) {
             return promise;
         },
 
-        delete: function(x) {
+        delete: function(id) {
             var promise = $http({
-                method: 'POST',
+                method: 'DELETE',
                 url: 'broadcast/delete',
                 dataType: 'json',
-                data: { id: x.id }
+                data: { id:id}
+            }).success(function(data, status, headers, config) {
+                return data;
+            })
+            return promise;
+        },
+
+        copy: function(id) {
+            var promise = $http({
+                method: 'POST',
+                url: 'broadcast/copy',
+                dataType: 'json',
+                data: { id:id}
             }).success(function(data, status, headers, config) {
                 return data;
             })

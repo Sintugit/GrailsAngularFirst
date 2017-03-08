@@ -50,7 +50,13 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
     }
 
     $scope.copyRow = function(x){
-        $scope.data.push({'id': x.id,'name': x.name,'status': x.status});
+        var promise = broadcastService.copy(x.id)
+        promise.then(
+            function(payload) {
+                if(payload.data.status == 'success') {
+                    $scope.data.push({'id': x.id,'name': x.name,'status': x.status});
+                }
+            })
     }
 
     $scope.updateName = function(x){
