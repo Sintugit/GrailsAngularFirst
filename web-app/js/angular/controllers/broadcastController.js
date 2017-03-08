@@ -28,13 +28,17 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
     }
 
     $scope.changeStatus = function(x){
-        if(x.status =='Running'){
-            x.status = 'Suspended';
-        }
-        else{
-            x.status = 'Running';
-        }
+        var promise = broadcastService.setStatus(x)
+        promise.then(
+            function(payload) {
 
+                if(payload.data.status =='Running'){
+                    x.status = 'Suspended';
+                }
+                else{
+                    x.status = 'Running';
+                }
+            })
     }
 
     $scope.copyRow = function(x){

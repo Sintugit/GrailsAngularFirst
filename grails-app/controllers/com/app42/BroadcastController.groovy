@@ -23,7 +23,6 @@ class BroadcastController {
         def map5 = [id:'226', name:'Copy:'+ new Date() + ' testname226',
         createdOn:new Date()+1, scheduledOn: new Date()+1, status:'Suspended']
 
-
         arr.add(map1)
         arr.add(map2)
         arr.add(map3)
@@ -31,5 +30,10 @@ class BroadcastController {
         arr.add(map5)
 
         render arr as JSON
+    }
+
+    def setStatus(){
+         def arr = request.JSON
+         render arr as JSON
     }
 }

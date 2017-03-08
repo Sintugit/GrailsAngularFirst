@@ -313,3 +313,94 @@ html .jspCorner { margin: 0 -3px 0 0 }
 #app42MAProfileWidget .UniqueWrapper{float: right; margin: 25px 0 0 20px; width: 100%;}
 #app42MAProfileWidget .UniqueWrapper h3{float: left; margin: 5px 0 0 0 !important; padding: 0!important; font-size: 18px;}
 #app42MAProfileWidget .UniqueWrapper .unique{float: left; margin: 0 0 0 10px;}
+
+/* changes since 6/03/17 */
+a{outline:none; color: #3995d4;}
+a:hover , a:visited , a:focus{text-decoration:none;}
+.email-notification .thumbnail{padding:0; margin-right: 40px; box-shadow: 2px 6px 8px 0 #d7d7d7;}
+.link-section a{ padding:12px; display:block; text-align:center; background: #f6fafd; font-weight: bold;	text-transform: capitalize; font-size: 13px;}
+.icon-section {padding: 25px; text-align: center; border-bottom: 1px solid #dddddd; background: #ffffff;}
+.icon-section span { color: #3592cf; font-size: 70px; vertical-align: middle;}
+.left-section .form-control{	min-width:130px; -moz-appearance: none; margin-right:10px;	text-transform: capitalize;}
+.tabs-container .nav-pills li a { padding: 5px 30px; text-transform: capitalize; border-bottom-left-radius: 0; border-bottom-right-radius: 0; border: 1px solid #aeaeae; color: #000000;}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover { background-color: #4385f5; border-color: #4385f5;
+    color: #ffffff;}
+.item-header h5 , .item-id  h5{margin: 0; text-transform: capitalize;}
+.tab-content {border-top: 1px solid #4385f5;}
+.item-header {background: #ffffff; border: 1px solid #e4e4e4; overflow: hidden; clear:both; display: flex;}
+.item-header .item-id  , .item-data .item-id{float: left; padding: 7px; text-align: center; width: 6%; border-right: 1px solid #e4e4e4;}
+.item-header .item-name {float: left; padding: 7px; width: 46%; border-right: 1px solid #e4e4e4;}
+.item-header .item-action  , .item-data  .item-action{float: left; width: 38%; padding: 7px; border-right: 1px solid #e4e4e4;}
+.item-header .item-status , .item-data .item-status {float: left; width: 10%; padding: 7px;}
+.item-data {background: #f4efd9; border: 1px solid #e4e4e4; overflow: hidden; display: flex;}
+.left-section input {margin: 0;}
+.item-data  .item-name{float: left; width: 40%; border-right: 1px solid #e4e4e4; padding: 5px;}
+.left-section {border-right: 1px solid #e4e4e4; padding: 5px; width: 6%; float: left; text-align: center;}
+.item-data p {font-size: 12px; margin-bottom: 5px;}
+.item-name .small {color: #8d8f8c; font-size: 11px;}
+.label-running {color: #5bc0de; }
+.action-button {background: #ffffff ; border: 1px solid #b7b7b7; color: #000000; display: inline-block; padding: 4px 10px; line-height: normal; text-transform:capitalize;}
+.action-button span {line-height: normal; padding-right: 5px; top: 0; vertical-align: middle;}
+.label-suspended{color:#d9534f;}
+.label-sent{color:#5cb85c; }
+.item-data .item-status h5 {font-size: 13px; text-transform: capitalize; font-weight: bold; margin: 0;}
+#analytics .item-header .item-name {width: 40%;}
+.box-6 {border-right: 1px solid #e4e4e4; float: left; padding: 5px; text-align: left; width: 7.71%;}
+.link-color{color:#5bc0de;}
+.item-data .link-color{font-weight:bold; font-size: 14px;}
+.small a {font-size: 13px; font-weight: bold;}
+.nav-pills > li {background: #f2f2f2;}
+.box-14 {border-right: 1px solid #e4e4e4; float: left; padding: 5px; width: 14.287%;}
+#summary .item-data {background: #e0fff0;}
+.tabs-container.summary {margin: 30px 0;}
+p.label-danger {background-color: #d9534f; font-size: 12px; border-radius: 6px; margin: 0; padding: 4px 7px; display: inline-block;}
+p.label-danger a {color: #ffffff; display: inline-block; margin-left: 10px; padding: 0;}
+.form-group p.label-danger { margin: 3px 0 0; float: left;}
+.form{ margin-top:30px; }
+.btn.btn-primary{ background: #4385f5; color: #fff;  border: 1px solid #4385f5}
+.form .search_btn{ float: left; }
+.compose-form .form-group textarea {resize: none; width: 100%; border: 1px solid #cccccc;}
+.form-group .button-container {margin: 20px 0 0; text-align: center;}
+.right-section a {font-size: 25px;}
+.right-section {float: right;}
+.left-input-section{float: left;}
+.add-button {float: left; font-size: 25px; line-height: normal; margin: 0 0 0 10px;}
+.round-button {border: 1px solid #cccccc; border-radius: 40px; display: inline-block; margin-right: 4px; padding: 10px; color: #000000; text-transform: capitalize;}
+.round-button.active {background: #3995d4; border-color: #3995d4; color: #ffffff;}
+.top-button {margin: 10px; text-align: right;}
+.buttons span {font-size: 10px; margin-right: 6px;}
+.buttons { background: #f7f6f1; border: 1px solid #cccccc; box-shadow: 2px 2px 3px 0 #cccccc; color: #333333; display: inline-block;
+    font-size: 12px; padding: 3px 8px; text-transform: capitalize;}
+.buttons.green {background: #83a96e; border-color: #83a96e; color: #ffffff;}
+.left-header-section {float: left;}
+.right-header-section {float: right;}
+.top-header {overflow: hidden;}
+.left-header-section p {font-size: 12px;}
+.left-header-section p b{margin-right:10px;}
+.anal-detail {background: #f0f0f0; border: 1px solid #cccccc; border-radius: 8px; margin: 20px 0; overflow: hidden;}
+.detail-box {border-right: 1px solid #cccccc; float: left; text-align: center; text-transform: capitalize; width: 14.28%;}
+.detail-box h4 {color: #2e93d7; font-weight: bold;}
+.right-form{overflow:hidden;}
+.box-8{float:left; width:8%; padding:10px; border-right: 1px solid #cccccc;}
+.box-22{float:left; width:22%; padding:10px; border-right: 1px solid #cccccc;}
+.box-26{float:left; width:26%; padding:10px; border-right: 1px solid #cccccc;}
+.table-header {background: #f0f0f0 ; border: 1px solid #cccccc; overflow:hidden;}
+.table-data {border-color: #cccccc; border-style: solid; border-width: 0 1px 1px; overflow: hidden; display: flex;}
+.anal-table h5 {margin: 0; font-size:12px; font-weight:bold;}
+.table-data p {font-size: 12px; margin: 0;}
+.analytics .modal-header { background: #4385f5; border-color: #4385f5; color: #ffffff; padding: 6px 15px;}
+.analytics .close {color: #ffffff; margin: 0; opacity: 1;}
+.analytics .modal-title {font-size: 15px; font-weight: bold;}
+.item-name .view-button {background: rgba(0, 0, 0, 0); border: medium none; color: #3995d4; font-size: 13px; font-weight: bold; margin-left: 5px; padding: 0;}
+@media screen and (max-width:990px){
+    .form .pull-right{padding-right: 15px;}
+}
+
+@media screen and (min-width: 768px){
+    .form [class*=' col-']{ padding-left: 0px  }
+    .form .col-sm-2{width: 24%;}
+    .form .col-sm-3{width:28%;}
+}
+@media screen and (max-width:768px){
+    .form .pull-right, .form .pull-left{ padding-right: 15px;padding-left: 15px; }
+}
