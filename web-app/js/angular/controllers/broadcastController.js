@@ -23,6 +23,22 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
     }
     $scope.getData()
 
+    $scope.reload = function(){
+        $scope.getAnalyticsData()
+    }
+
+    $scope.getAnalyticsData = function(){
+        $scope.toggleGridLoader("myWidget")  // defined in main controller
+        var promise = broadcastService.getAnalytics()
+        promise.then(
+            function(payload) {
+                $scope.analyticData  = payload.data;
+                $scope.toggleGridLoader("myWidget")
+            })
+
+    }
+    $scope.getAnalyticsData()
+
     $scope.removeRow = function($index, id){
         var promise = broadcastService.delete(id)
         promise.then(

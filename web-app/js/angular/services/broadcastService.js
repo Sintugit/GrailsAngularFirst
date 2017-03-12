@@ -14,6 +14,16 @@ app42Angular.factory('broadcastService', function($rootScope,$http) {
             return promise;
         },
 
+        getAnalytics: function() {
+            var promise = $http({
+                method: 'GET',
+                url: 'broadcast/getAnalyticContent'
+            }).success(function(data, status, headers, config) {
+                return data;
+            })
+            return promise;
+        },
+
         setStatus: function(x) {
             var promise = $http({
                 method: 'POST',
