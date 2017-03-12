@@ -36,11 +36,11 @@ class BroadcastController {
         def arr = []
 
         def map1 = [id:'102', name:'Copy:'+ new Date() + ' testname102',sentOn:new Date()+4, tags:['DRIPSMS','DRIPSMS1'],
-        sent: 3, delivered:3,delPer:100,bounce:0,bouncePer:0,uniqueOpen:3,uoPer:100,uniqueClick:0,ucPer:0,unsub:0,
+        sent: 3,sentPer:100, delivered:3,delPer:100,bounce:0,bouncePer:0,uniqueOpen:3,uoPer:100,uniqueClick:0,ucPer:0,unsub:0,
         unsubPer:0,abuse:0,abusePer:0]
 
         def map2 = [id:'568', name:'Copy:'+ new Date() + ' testname568',sentOn:new Date()+2, tags:['DRIPSMS'],
-        sent: 3, delivered:3,delPer:100,bounce:0,bouncePer:0,uniqueOpen:3,uoPer:100,uniqueClick:2,ucPer:66.67,unsub:0,
+        sent: 3,sentPer:100, delivered:3,delPer:100,bounce:0,bouncePer:0,uniqueOpen:3,uoPer:100,uniqueClick:2,ucPer:66.67,unsub:0,
         unsubPer:0,abuse:0,abusePer:0]
 
         arr.add(map1)
@@ -65,5 +65,19 @@ class BroadcastController {
         def arr = request.JSON
         def status = [status:'success']
         render status as JSON
+    }
+
+    def broadcastData(){
+        def arr = []
+
+        def map1 = [id:'1', broadcastDate: new Date() + 4,primaryKey: 'Dummyjal2', recipient:'jalpa.dinesh@angelbroking.com',
+        details: 'sent successfully and viewed']
+
+        def map2 = [id:'2', broadcastDate: new Date() + 2,primaryKey: 'Dummyjalkavi2', recipient:'kavita.agrawal@angelbroking.com',
+        details: 'sent successfully and viewed']
+        arr.add(map1)
+        arr.add(map2)
+
+        render arr as JSON
     }
 }

@@ -156,14 +156,18 @@
                             <h5 ng-bind="x.id"></h5>
                         </div>
                         <div class="item-name">
-                            <p ng-bind="x.name">Copy:22 Dec 2016 @3:31pm-Copy:22 Dec 2016 @2:27pm-B2B2C test 2022</p>
-                            <p class="small"> <b>sent on</b> on <span data-bind="x.sentOn"></span> <button type="button" data-toggle="modal" data-target="#myModal" class="view-button">view</button></p>
+                            <p ng-bind="x.name"></p>
+                            <p class="small"> <b>sent on</b><span ng-bind="x.sentOn"></span>
+                            <button type="button" data-toggle="modal" data-target="#myModal" class="view-button" ng-click="analyticsModal(x)">view</button>
+                            </p>
                             <span ng-repeat="t in x.tags">
-                            <p class="label label-danger"><span ng-bind="t"></span><span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removeTag($index,x.tags)"></span></p>
+                            <p class="label label-danger"><span ng-bind="t"></span>
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removeTag($index,x.tags)"></span></p>
                             </span>
                         </div>
                         <div class="item-sent box-6">
                             <p class="link-color" ng-bind="x.sent"></p>
+                            <p><span ng-bind="x.sentPer"></span>%</p>
                         </div>
                         <div class="item-delivered box-6">
                             <p class="link-color" ng-bind="x.delivered"></p>
@@ -209,7 +213,7 @@
       <div class="modal-body">
         <div class="top-header">
 			<div class="left-header-section">
-				<p><b>Broadcast Name:</b>Copy:22 Dec 2016 @2:27pm-B2B2C test 2212..</p>
+				<p><b>Broadcast Name:</b><span ng-bind="current.name"></span></p>
 			</div>
 			<div class="right-header-section">
 				<a href="" class="buttons"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download report</a>
@@ -217,39 +221,34 @@
 		</div>
 			<div class="anal-detail">
 				<div class="detail-box">
-					<h4>100%</h4>
-					<p>3</p>
+					<h4><span ng-bind="current.sentPer"></span>%</h4>
+					<p ng-bind="current.sent"></p>
 					<p>sent</p>
 				</div>
-				<div class="detail-box delivered">
-					<h4>100%</h4>
-					<p>3</p>
+				<div class="detail-box">
+					<h4><span ng-bind="current.delPer"></span>%</h4>
+					<p ng-bind="current.delivered"></p>
 					<p>delivered</p>
 				</div>
 				<div class="detail-box">
-					<h4>100%</h4>
-					<p>3</p>
+					<h4><span ng-bind="current.bouncePer"></span>%</h4>
+					<p ng-bind="current.bounce"></p>
 					<p>bounces</p>
 				</div>
 				<div class="detail-box">
-					<h4>133.3%</h4>
-					<p>3</p>
-					<p>total opens</p>
-				</div>
-				<div class="detail-box">
-					<h4>100%</h4>
-					<p>3</p>
+					<h4><span ng-bind="current.uoPer"></span>%</h4>
+					<p ng-bind="current.uniqueOpen"></p>
 					<p>unique opens</p>
 				</div>
-				<div class="detail-box zero">
-					<h4>0%</h4>
-					<p>3</p>
-					<p>sent</p>
+				<div class="detail-box">
+					<h4><span ng-bind="current.ucPer"></span>%</h4>
+					<p ng-bind="current.uniqueClick"></p>
+					<p>unique clicks</p>
 				</div>
-				<div class="detail-box zero">
-					<h4>0%</h4>
-					<p>3</p>
-					<p>sent</p>
+				<div class="detail-box">
+					<h4><span ng-bind="current.unsubPer"></span>%</h4>
+					<p ng-bind="current.unsub"></p>
+					<p>unsubscribed</p>
 				</div>
 			</div>
 			<div class="right-form">
@@ -286,55 +285,21 @@
 						<h5>Details</h5>
 					</div>
 				</div>
-				<div class="table-data">
+				<div class="table-data" ng-repeat="x in broadcastData">
 					<div class="serial box-8">
-						<p>1.</p>
+						<p ng-bind="x.id"></p>
 					</div>
 					<div class="broad-date box-22">
-						<p>2015-07-16T22:30:59Z</p>
+						<p ng-bind="x.broadcastDate"></p>
 					</div>
 					<div class="primary-key box-22">
-						<p>Dummyjal2</p>
+						<p ng-bind="x.primaryKey"></p>
 					</div>
 					<div class="recipient box-26">
-						<p>jalpa.dinesh@angelbooking.com</p>
+						<p ng-bind="x.recipient"></p>
 					</div>
 					<div class="details box-22">
-						<p>sent successfully and viewd</p>
-					</div>
-				</div>
-				<div class="table-data">
-					<div class="serial box-8">
-						<p>1.</p>
-					</div>
-					<div class="broad-date box-22">
-						<p>2015-07-16T22:30:59Z</p>
-					</div>
-					<div class="primary-key box-22">
-						<p>Dummyjal2</p>
-					</div>
-					<div class="recipient box-26">
-						<p>jalpa.dinesh@angelbooking.com</p>
-					</div>
-					<div class="details box-22">
-						<p>sent successfully and viewd</p>
-					</div>
-				</div>
-				<div class="table-data">
-					<div class="serial box-8">
-						<p>1.</p>
-					</div>
-					<div class="broad-date box-22">
-						<p>2015-07-16T22:30:59Z</p>
-					</div>
-					<div class="primary-key box-22">
-						<p>Dummyjal2</p>
-					</div>
-					<div class="recipient box-26">
-						<p>jalpa.dinesh@angelbooking.com</p>
-					</div>
-					<div class="details box-22">
-						<p>sent successfully and viewd</p>
+						<p ng-bind="x.details"></p>
 					</div>
 				</div>
 			</div>

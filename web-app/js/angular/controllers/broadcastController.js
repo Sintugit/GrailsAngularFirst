@@ -83,4 +83,13 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
         tags.splice($index,1);
     }
 
+    $scope.analyticsModal = function(x){
+        var promise = broadcastService.analyticsModal(x.id)
+        promise.then(
+            function(payload) {
+                $scope.broadcastData = payload.data;
+            })
+        $scope.current = x;
+    }
+
 });

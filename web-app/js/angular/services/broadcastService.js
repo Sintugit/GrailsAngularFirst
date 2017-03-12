@@ -58,6 +58,18 @@ app42Angular.factory('broadcastService', function($rootScope,$http) {
                 return data;
             })
             return promise;
+        },
+
+        analyticsModal: function(id) {
+            var promise = $http({
+                method: 'POST',
+                url: 'broadcast/broadcastData',
+                dataType: 'json',
+                data: { id:id}
+            }).success(function(data, status, headers, config) {
+                return data;
+            })
+            return promise;
         }
     }
     return service
