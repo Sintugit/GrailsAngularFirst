@@ -8,14 +8,14 @@
     <link rel="stylesheet" media="all" type="text/css" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+    <link rel='stylesheet' href='${resource(dir:'css',file:'app.css')}'>
+    <link rel='stylesheet' href='${resource(dir:'css',file:'bootstrap.min.css')}'>
     <link rel='stylesheet' href='${resource(dir:'css',file:'custom_style.css')}'>
     <link rel='stylesheet' href='${resource(dir:'css',file:'custom_styleV2.css')}'>
-    <link rel='stylesheet' href='${resource(dir:'css',file:'custom_styleV2.css')}'>
-                       '
-    <link rel='stylesheet' href='${resource(dir:'css',file:'app.css')}'>
 
 
-  <link rel='stylesheet' href='${resource(dir:'css',file:'datepicker.css')}'>
+
+    <link rel='stylesheet' href='${resource(dir:'css',file:'datepicker.css')}'>
 
   
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.css'>
@@ -58,12 +58,14 @@
 <!--Services-->
 <script src="${resource(dir:'js/angular/services',file:'sampleService.js')}"></script>
 <script src="${resource(dir:'js/angular/services',file:'broadcastService.js')}"></script>
+<script src="${resource(dir:'js/angular/services',file:'composeService.js')}"></script>
 <!--Controllers-->
 
 <script src="${resource(dir:'js/angular/controllers',file:'main.js')}"></script>
 <script src="${resource(dir:'js/angular/controllers',file:'firstController.js')}"></script>
 <script src="${resource(dir:'js/angular/controllers',file:'secondController.js')}"></script>
 <script src="${resource(dir:'js/angular/controllers',file:'broadcastController.js')}"></script>
+<script src="${resource(dir:'js/angular/controllers',file:'composeController.js')}"></script>
 <script src='${resource(dir:'js/angular/resources',file:'application.js')}'></script>
 
 </body>
