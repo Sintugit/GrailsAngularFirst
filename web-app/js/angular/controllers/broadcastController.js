@@ -18,7 +18,7 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
             function(payload) {
                 $scope.data  = payload.data;
                 $scope.toggleGridLoader("myWidget")
-            })
+            });
 
     }
     $scope.getData()
@@ -34,7 +34,7 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
             function(payload) {
                 $scope.analyticData  = payload.data;
                 $scope.toggleGridLoader("myWidget")
-            })
+            });
 
     }
     $scope.getAnalyticsData()
@@ -47,7 +47,7 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
                     $scope.view = payload.data;
                     $('#PreviewMsg').modal();
                 }
-            })
+            });
 
     }
 
@@ -58,7 +58,7 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
                 if(payload.data.status == 'success') {
                     $scope.data.splice($index, 1);
                 }
-            })
+            });
 
     }
 
@@ -74,7 +74,7 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
                         x.status = 'Running';
                     }
                 }
-            })
+            });
     }
 
     $scope.copyRow = function(x){
@@ -84,7 +84,7 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
                 if(payload.data.status == 'success') {
                     $scope.data.push({'id': x.id,'name': x.name,'tags': x.tags,'status': x.status});
                 }
-            })
+            });
     }
 
     $scope.updateName = function(x){
@@ -100,7 +100,7 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
         promise.then(
             function(payload) {
                 $scope.broadcastData = payload.data;
-            })
+            });
         $scope.current = x;
     }
 
@@ -111,8 +111,21 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
                 function(payload) {
                     $scope.data  = payload.data;
 
-                })
+                });
         }
+    }
+
+    $scope.report = function(id){
+        var promise = broadcastService.report(id)
+        promise.then(
+            function(payload) {
+                if(payload.data.status == 'success') {
+                    alert('report data requested');
+                }
+                else{
+                    alert('somethig went wrong');
+                }
+            });
     }
 
 });

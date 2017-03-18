@@ -217,7 +217,7 @@
     				<p><b>Broadcast Name:</b><span ng-bind="current.name"></span></p>
     			</div>
     			<div class="right-header-section">
-    				<a href="" class="buttons"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download report</a>
+    				<button class="buttons" ng-click="report(current.id)"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download report</a>
     			</div>
     		</div>
 			<div class="anal-detail">

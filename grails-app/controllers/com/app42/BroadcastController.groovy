@@ -107,4 +107,10 @@ class BroadcastController {
 
         render data as JSON
     }
+
+    def report(){
+            def arr = request.JSON
+            def status = [status:'success']
+            render status as JSON
+        }
 }
