@@ -55,6 +55,14 @@ class BroadcastController {
         render status as JSON
     }
 
+    def view(){
+        def arr = request.JSON
+        def status = [scheduledFor:new Date()+1, subject:'Open me',from:'Angel Broking feedback@angelbroking.in',
+        sentTo:'Demo',status:'success']
+        render status as JSON
+
+    }
+
     def delete(){
         def arr = request.JSON
         def status = [status:'success']
@@ -79,5 +87,24 @@ class BroadcastController {
         arr.add(map2)
 
         render arr as JSON
+    }
+
+    def search(){
+        def arr = request.JSON
+        def data = []
+        def map1 = [id:'568', name:'Copy:'+ new Date() + ' testname568',
+        createdOn:new Date()+2, scheduledOn: new Date()+1, tags:['DRIPSMS'],status:'Sent']
+
+        def map2 = [id:'574', name:'Copy:'+ new Date() + ' testname574',
+        createdOn:new Date(), scheduledOn: new Date()+1, status:'Sent']
+
+        def map3 = [id:'226', name:'Copy:'+ new Date() + ' testname226',
+        createdOn:new Date()+1, scheduledOn: new Date()+1, status:'Suspended']
+
+        data.add(map1)
+        data.add(map2)
+        data.add(map3)
+
+        render data as JSON
     }
 }

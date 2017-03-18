@@ -39,6 +39,18 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
     }
     $scope.getAnalyticsData()
 
+    $scope.view = function(id){
+        var promise = broadcastService.view(id)
+        promise.then(
+            function(payload) {
+                if(payload.data.status == 'success') {
+                    $scope.view = payload.data;
+                    $('#PreviewMsg').modal();
+                }
+            })
+
+    }
+
     $scope.removeRow = function($index, id){
         var promise = broadcastService.delete(id)
         promise.then(
@@ -90,6 +102,17 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
                 $scope.broadcastData = payload.data;
             })
         $scope.current = x;
+    }
+
+    $scope.search = function(){
+        if(typeof $scope.searchText !== "undefined" && typeof $scope.searchType !== "undefined"){
+            var promise = broadcastService.search($scope.searchType,$scope.searchText)
+            promise.then(
+                function(payload) {
+                    $scope.data  = payload.data;
+
+                })
+        }
     }
 
 });

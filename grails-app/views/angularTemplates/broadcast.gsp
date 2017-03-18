@@ -4,14 +4,14 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="form-group col-sm-2">
-                        <select class="form-control">
-                            <option>Search By</option>
+                        <select class="form-control" name="searchBy" ng-model="searchType">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="id">Id</option>
+                            <option value="name">Name</option>
                         </select>
                     </div>
                     <div class="form-group col-sm-3">
-                        <select class="form-control">
-                            <option>Select Broadcast Type </option>
-                        </select>
+                        <input name="search" ng-model="searchText" placeholder="search" class="form-control" type="text">
                     </div>
                     <div class="form-group col-sm-2">
                         <div class="input-group date" id="datetimepicker1">
@@ -31,17 +31,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 right_sec ">
-                <div class="row">
-                 <div class="form-group pull-left">
-                        <button type="button" class="btn btn-primary ">Search</button>
-                    </div>
-                    <div class="form-group  pull-right">
-                        <button type="button" class="btn btn-primary">New Broadcast</button>
-                    </div>
-                </div>
-            </div>
         </form>
+        <div class="col-md-4 right_sec ">
+            <div class="row">
+             <div class="form-group pull-left">
+                    <button type="button" class="btn btn-primary" ng-click="search()">Search</button>
+                </div>
+                <form action="${request.getContextPath()}/#/compose" class="form-group  pull-right">
+                    <button type="submit" class="btn btn-primary">New Broadcast</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 </div>
 <script src="${resource(dir:'js/angular',file:'custom.js')}"></script>
@@ -94,11 +95,11 @@
                             </span>
                         </div>
                         <div class="item-action">
-                            <a href="#" class="action-button">
+                            <button class="action-button" ng-click="view(x.id)">
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>view
-                            </a>
+                            </button>
                             <button class="action-button" ng-click="copyRow(x)">
-                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>copy
+                                <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>copy
                             </button>
                             <a href="#" class="action-button">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>edit
@@ -206,19 +207,19 @@
     <!-- Modal content-->
 
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Analytics Details</h4>
-      </div>
-      <div class="modal-body">
-        <div class="top-header">
-			<div class="left-header-section">
-				<p><b>Broadcast Name:</b><span ng-bind="current.name"></span></p>
-			</div>
-			<div class="right-header-section">
-				<a href="" class="buttons"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download report</a>
-			</div>
-		</div>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Analytics Details</h4>
+        </div>
+        <div class="modal-body">
+            <div class="top-header">
+    			<div class="left-header-section">
+    				<p><b>Broadcast Name:</b><span ng-bind="current.name"></span></p>
+    			</div>
+    			<div class="right-header-section">
+    				<a href="" class="buttons"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download report</a>
+    			</div>
+    		</div>
 			<div class="anal-detail">
 				<div class="detail-box">
 					<h4><span ng-bind="current.sentPer"></span>%</h4>
@@ -303,11 +304,49 @@
 					</div>
 				</div>
 			</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default buttons" data-dismiss="modal">Close</button>
-      </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default buttons" data-dismiss="modal">Close</button>
+        </div>
     </div>
 
   </div>
+</div>
+
+<!-- Modal -->
+<div id="PreviewMsg" class="modal fade analytics preview-msg" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Preview for msg ID: 409</h4>
+            </div>
+            <div class="modal-body">
+                <div class="top-details row">
+                    <div class="right-side col-md-8 col-sm-7 col-xs-12">
+                        <p><span class="dark">Scheduled for:</span><span ng-bind="view.scheduledFor"></span></p>
+                        <p><span class="dark">Subject:</span><span ng-bind="view.subject"></span></p>
+                        <p><span class="dark">From:</span><span ng-bind="view.from"></span></p>
+                        <p><span class="dark">Sent to Channel:</span><span ng-bind="view.sentTo"></span></p>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-xs-6 ">
+                        <div class="left-side">
+                            <h4>Attachment(s)</h4>
+                            <p>No Attachment Selected</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="images/refer.png">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default buttons" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>

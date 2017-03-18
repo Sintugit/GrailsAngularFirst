@@ -10,7 +10,7 @@ app42Angular.factory('broadcastService', function($rootScope,$http) {
                 url: 'broadcast/getContent'
             }).success(function(data, status, headers, config) {
                 return data;
-            })
+            });
             return promise;
         },
 
@@ -20,7 +20,7 @@ app42Angular.factory('broadcastService', function($rootScope,$http) {
                 url: 'broadcast/getAnalyticContent'
             }).success(function(data, status, headers, config) {
                 return data;
-            })
+            });
             return promise;
         },
 
@@ -32,7 +32,19 @@ app42Angular.factory('broadcastService', function($rootScope,$http) {
                 data: { id: x.id ,status: x.status}
             }).success(function(data, status, headers, config) {
                 return data;
-            })
+            });
+            return promise;
+        },
+
+        view: function(id) {
+            var promise = $http({
+                method: 'GET',
+                url: 'broadcast/view',
+                dataType: 'json',
+                data: { id: id }
+            }).success(function(data, status, headers, config) {
+                return data;
+            });
             return promise;
         },
 
@@ -44,7 +56,7 @@ app42Angular.factory('broadcastService', function($rootScope,$http) {
                 data: { id:id}
             }).success(function(data, status, headers, config) {
                 return data;
-            })
+            });
             return promise;
         },
 
@@ -56,19 +68,31 @@ app42Angular.factory('broadcastService', function($rootScope,$http) {
                 data: { id:id}
             }).success(function(data, status, headers, config) {
                 return data;
-            })
+            });
             return promise;
         },
 
         analyticsModal: function(id) {
             var promise = $http({
-                method: 'POST',
+                method: 'GET',
                 url: 'broadcast/broadcastData',
                 dataType: 'json',
                 data: { id:id}
             }).success(function(data, status, headers, config) {
                 return data;
-            })
+            });
+            return promise;
+        },
+
+        search: function(searchType,searchText){
+            var promise = $http({
+                method: 'POST',
+                url: 'broadcast/search',
+                dataType: 'json',
+                data: { searchType:searchType,searchText:searchText}
+            }).success(function(data, status, headers, config) {
+                return data;
+            });
             return promise;
         }
     }
