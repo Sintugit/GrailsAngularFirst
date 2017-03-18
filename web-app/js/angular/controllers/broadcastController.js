@@ -70,7 +70,7 @@ app42Angular.controller("broadcastController", function($rootScope,$scope,broadc
         promise.then(
             function(payload) {
                 if(payload.data.status == 'success') {
-                    $scope.data.push({'id': x.id,'name': x.name,'status': x.status});
+                    $scope.data.push({'id': x.id,'name': x.name,'tags': x.tags,'status': x.status});
                 }
             })
     }
